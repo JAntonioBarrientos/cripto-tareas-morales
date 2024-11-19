@@ -1,3 +1,12 @@
+# Tarea Implementación DES
+
+## Instrucciones
+
+Implementa DES. Puedes usar ChatGPT, Gemini. o tu imaginación, pero asegúrate que esté bien hecho. (1 punto)
+
+## Investigación llaves de DES
+
+
 ### Llaves Débiles
 
 Las llaves débiles en DES presentan una particularidad que las hace vulnerables: cada mitad de la llave está compuesta únicamente por ceros o unos. Esto provoca que la misma subllave se utilice en cada una de las rondas del algoritmo de cifrado, eliminando la variabilidad necesaria para garantizar la seguridad. LLaves débiles:
