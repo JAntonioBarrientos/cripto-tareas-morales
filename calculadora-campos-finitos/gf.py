@@ -1,5 +1,3 @@
-# gf.py
-
 class GF:
     def __init__(self, degree, irreducible_poly):
         """
@@ -154,12 +152,28 @@ class GFElement:
         return (self.value == other.value and
                 self.field == other.field)
 
+    def to_polynomial(self):
+        """Convierte el valor del elemento a su representación polinómica."""
+        if self.value == 0:
+            return "0"
+        terms = []
+        degree = self.field.degree - 1
+        for i in range(degree, -1, -1):
+            if (self.value >> i) & 1:
+                if i == 0:
+                    terms.append("1")
+                elif i == 1:
+                    terms.append("x")
+                else:
+                    terms.append(f"x^{i}")
+        return " + ".join(terms)
+
     def __repr__(self):
-        """Representación del elemento en formato binario."""
-        return f"GFElement({bin(self.value)})"
+        """Representación del elemento en formato binario y polinómico."""
+        return f"GFElement({bin(self.value)}) [{self.to_polynomial()}]"
 
     def __str__(self):
-        """Representación del elemento en formato binario."""
+        """Representación del elemento en formato binario y polinómico."""
         return self.__repr__()
 
     def __hash__(self):
@@ -171,7 +185,6 @@ class GFElement:
         return self  # En GF(2^n), -a = a
 
 
-# Agregar método __eq__ a la clase GF para comparar campos
 def gf_eq(self, other):
     if not isinstance(other, GF):
         return False

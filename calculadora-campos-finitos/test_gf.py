@@ -1,5 +1,3 @@
-# test_gf.py
-
 import unittest
 from gf import GF, GFElement
 
@@ -44,7 +42,7 @@ class TestGFOperations(unittest.TestCase):
         expected = 0b101
         self.assertEqual(result.value, expected, "Resta en GF(8) incorrecta.")
 
-    # Pruebas de Suma y Resta entre Campos Diferentes (Debe Fallar)
+    # Pruebas de Suma y Resta entre Campos Diferentes
     def test_addition_different_fields(self):
         a = self.gf4.element(0b01)  # GF(4)
         b = self.gf8.element(0b01)  # GF(8)
@@ -178,8 +176,6 @@ class TestGFOperations(unittest.TestCase):
         # 2^10 = 24 * 2 = 48
         expected = 0b110000  # 48
         self.assertEqual(result.value, expected, "Exponenciación grande en GF(64) falló.")
-
-    # Puedes añadir más pruebas según sea necesario
 
 if __name__ == '__main__':
     unittest.main()

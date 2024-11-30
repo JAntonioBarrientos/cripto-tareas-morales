@@ -9,4 +9,4 @@ Tareas implementadas:
 
 1. [Indice de Coincidencia](indice-coincidencia-tarea/ic.py)
 2. [Cifrado DES](des-tarea/DES.py)
-3. [Calculadora de Campos Finitos](calculador-campos-finitos/CalculadoraCamposFinitos.py)
+3. [Calculadora de Campos Finitos](calculadora-campos-finitos/calculator.py)
